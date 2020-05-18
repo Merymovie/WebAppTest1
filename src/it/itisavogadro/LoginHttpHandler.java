@@ -36,25 +36,7 @@ public class LoginHttpHandler implements HttpHandler {
         //risposta web in codice html:
         String htmlResponse = null;
         // se il metodo è un get la risposta è il form da compilare.
-        if ("GET".equalsIgnoreCase(httpExchange.getRequestMethod())) {
-            htmlResponse = "" +
-                    "<html>" +
-                    "<body>" +
-                    "<h1>" + httpExchange.getRequestMethod() + "- LOGIN Test - 1 App</h1>" +
-                    "<form method=\"POST\" action=\"/login\">" +
-                    //testo richiesta
-                    "<label>Utente:</label><br>" +
-                    //inserimento in input
-                    "<input type=text name=\"user\"><br>" +
-                    "<label>Password:</label><br>" +
-                    "<input type=password name=\"password\"><br>" +
-                    //pulsante invio
-                    "<input type= submit value=\"Invio\">" +
-                    "</form>" +
-                    "</body>" +
-                    "</html>"
-            ;
-        } else {
+        if ("POST".equalsIgnoreCase(httpExchange.getRequestMethod())) {
             // potrebbero essere put del o post, noi usiamo solo post
             //richiesta del corpo ossia il canale di dati del browser
             Scanner scanner = new Scanner(httpExchange.getRequestBody(), StandardCharsets.UTF_8.name());
@@ -156,6 +138,7 @@ public class LoginHttpHandler implements HttpHandler {
                         (credenzialiValide ? "<h1> Accesso Consentito</h1>" : "<h1style= 'color:red'> Accesso Negato </h1>")+
                         "utenti: " + utenti + "<br>" +
                         //visualizziamo anche i dati dell'utente
+                        "<a href=\"/static/menu.html\">Vai al menu</a><br>"+
                         "</body>" +
                         "</html>";
 
@@ -171,6 +154,9 @@ public class LoginHttpHandler implements HttpHandler {
                 ;
             }
         }
+        //encoding caratteri
+        String encoding = "UTF-8";
+        httpExchange.getResponseHeaders().set("Content-Type", "text/html; charset=" + encoding);
         //intestazione risposta:
         httpExchange.sendResponseHeaders(200, htmlResponse.length());
         //corpo risposta:

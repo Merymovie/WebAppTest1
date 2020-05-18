@@ -18,6 +18,7 @@ public class WebAppStarter {
             server.createContext/* contesto*/( "/test-1", new Test1HttpHandler());//classe che gestisce la richiesta del client
             server.createContext/* contesto*/( "/login", new LoginHttpHandler());//classe che gestisce la richiesta del client
             server.createContext/* contesto*/( "/cambiopassword", new CambioPasswordHttpHandler());//classe gestisce il cambio password
+            server.createContext/* contesto*/( "/studenti", new StudentiHttpHandler());
             server.createContext/* contesto*/( "/static", new StaticHttpHandler());//classe gestisce il cambio password
             //parallelizzazione delle richieste:
             ThreadPoolExecutor threadPoolExecutor = (ThreadPoolExecutor) Executors.newFixedThreadPool(10/*numero richieste parallelo*/);
