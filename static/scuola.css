@@ -1,0 +1,73 @@
+
+body {
+    font-family: Arial;
+    background-color: lightblue;
+    padding: 20px 30px 50px 30px;
+}
+h1{
+    font-size: 32px;
+    color: black;
+    background-color: cornsilk;
+    padding: 20px;
+    max-width: 500px;
+    text-align: center;
+    margin: 0 0 60px 0;
+}
+h2{
+    color: darkblue;
+}
+li{
+    text-decoration: underline;
+    color: #444444;
+    line-height: 24px;
+}
+.menuBlock{
+    max-width: 600px;
+}
+.loginForm{
+    max-width: 500px;
+    background-color: aliceblue;
+    padding: 20px;
+}
+.loginForm label{
+    color: darkblue;
+    font-weight: bold;
+    font-size: 20px;
+}
+.loginForm input[type=text]
+.loginForm input[type=password]
+{
+    height: 20px;
+    padding: 5px;
+    font-size: 20px;
+    font-family: arial;
+    margin: 10px 0;
+}
+.loginForm input[type=submit] {
+    padding: 10px 20px 10px 20px;
+    margin: 10px 10px 10px 10px;
+    background-color: darkslateblue;
+    border-radius: 5px;
+    font-size: 16px;
+    text-align: center;
+    color: black;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+
+    /*ombra del pulsante*/
+    /* https://www.cssmatic.com/box-shadow*/
+    -wekit-box-shadow: 5px 5px 13px -2px rgba(138, 138, 138, 1);
+    -moz-box-shadow: 5px 5px 13px -2px rgba(138, 138, 138, 1);
+    box-shadow: 5px 5px 13px -2px rgba(138, 138, 138, 1);
+}
+.loginForm input[type=submit]:hover
+{
+    color: white;
+    background-color: #ff6706;
+    cursor: pointer;
+    margin: 13px 7px 7px 13px;
+}
+
+
+
+
